@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+
+    <title>INICIO</title>
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="./bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./bootstrap/cover.css" rel="stylesheet">
+  </head>
+
+  <body class="text-center">
+    <h3>API Y FETCH </h3>
+    <div class="container">
+      <div class="row">
+          <table class="table table-striped" id="tabla1">
+          </table>
+      </div>
+  </div>
+
+  <script>
+      fetch("https://jsonplaceholder.typicode.com/users")
+          .then(response => response.json())
+          .then(datos => {
+              let cad = '<tr><th>Nombre</th><th>Email</th><th>Télefono</th></tr>';
+              for (let usuario of datos) {
+                  cad += `<tr><td>${usuario.name}</td>
+                              <td>${usuario.email}</td>
+                              <td>${usuario.phone}</td></tr>`;
+              }
+              document.getElementById("tabla1").innerHTML = cad;
+          });
+  </script>
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand">PROYECTO </h3>
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="item" href="Validacion.html">API Y FETCH</a>
+            <a class="item" href="pagina2.html">VALIDACION</a>
+            <a class="item" href="pagina3.html">localStorage</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+
+
+    <!--json-->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./bootstrap/jquery-3.2.1.slim.min.js.descarga" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="./bootstrap/popper.min.js.descarga"></script>
+    <script src="./bootstrap/bootstrap.min.js.descarga"></script>
+  
+
+</body></html>

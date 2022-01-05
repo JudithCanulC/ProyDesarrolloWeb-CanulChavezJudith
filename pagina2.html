@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+
+    <title>Validacion</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./bootstrap/cover.css" rel="stylesheet">
+  </head>
+
+<body class="text-center">
+
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+          <div class="inner">
+            <h3 class="masthead-brand">PROYECTO </h3>
+            <nav class="nav nav-masthead justify-content-center">
+              <a class="item" href="Validacion.html">API Y FETCH</a>
+              <a class="item" href="pagina2.html">VALIDACION</a>
+              <a class="item" href="pagina3.html">localStorage</a>
+            </nav>
+          </div>
+        </header>
+      </div>
+
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Validación de formularios con JavaScript</h1>
+                <br>
+                <form action="Validacion.html" id="formulario">
+                    <div class="form-group">
+                        <input name="nombre" required id="nombre" type="text" class="form-control" placeholder="Nombre">
+                        <input name="apellido" required id="apellido" type="text" class="form-control" placeholder="apellido">
+                        <input name="correo" required id="correo" type="email" class="form-control"
+                        placeholder="Correo">
+                    </div>
+                    
+                    <button class="btn btn-success">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script>
+        const $formulario = document.querySelector("#formulario"),
+            $nombre = document.querySelector("#nombre"),
+            $apellido = document.querySelector("#apellido");
+            $correo = document.querySelector("#correo");
+        $formulario.onsubmit = evento => {
+            evento.preventDefault();
+            const nombre = $nombre.value,
+                apellido = $apellido.value
+                correo = $correo.value;
+            // Validar que no sea correo hotmail
+            if (correo.endsWith("@hotmail.com")) {
+                alert("No puede ser de hotmail");
+                return;
+            }
+            $formulario.submit();
+        };
+    </script>
+
+</body>
+
+</html>
